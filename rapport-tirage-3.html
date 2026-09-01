@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Tirage">
+<meta name="theme-color" content="#182A3D">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>Registre de Tirage — Rapport journalier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<style>
+  :root{
+    --navy:#182A3D;
+    --navy-2:#22394F;
+    --amber:#E3A23C;
+    --cream:#F6F3EC;
+    --slate:#5C6B7A;
+    --green:#4A7C59;
+    --red:#B8492E;
+    --line: rgba(24,42,61,0.12);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:var(--cream);
+    color:var(--navy);
+    min-height:100vh;
+  }
+  header{
+    background:var(--navy);
+    color:var(--cream);
+    padding:22px 24px 20px;
+    position:relative;
+    overflow:hidden;
+  }
+  header::after{
+    content:"";
+    position:absolute;
+    right:-40px;top:-40px;
+    width:160px;height:160px;
+    border:2px dashed rgba(230,170,70,0.25);
+    border-radius:50%;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin:0 0 6px;
+  }
+  h1{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    font-size:26px;
+    letter-spacing:0.01em;
+    margin:0;
+    text-transform:uppercase;
+  }
+  .sub{
+    font-size:13px;
+    color:rgba(246,243,236,0.65);
+    margin-top:6px;
+  }
+  main{
+    max-width:920px;
+    margin:0 auto;
+    padding:20px 16px 60px;
+  }
+  .toolbar{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    align-items:center;
+    margin-bottom:18px;
+  }
+  .toolbar label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--slate);
+    display:block;
+    margin-bottom:4px;
+  }
+  input[type=date], select, input[type=text], input[type=number]{
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    padding:9px 10px;
+    border:1.5px solid var(--line);
+    border-radius:6px;
+    background:#fff;
+    color:var(--navy);
+  }
+  input:focus, select:focus{
+    outline:none;
+    border-color:var(--amber);
+  }
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:10px;
+    margin-bottom:22px;
+  }
+  .card{
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:8px;
+    padding:14px 14px 12px;
+    position:relative;
+  }
+  .card .num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:26px;
+    font-weight:600;
+    color:var(--navy);
+  }
+  .card .lbl{
+    font-size:11px;
+    color:var(--slate);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    margin-top:2px;
+  }
+  .card.top .num{color:var(--amber);}
+  section.panel{
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    margin-bottom:18px;
+    overflow:hidden;
+  }
+  .panel-head{
+    padding:14px 16px 12px;
+    border-bottom:1.5px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .panel-head h2{
+    font-family:'Oswald',sans-serif;
+    font-size:15px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin:0;
+  }
+  .add-form{
+    display:flex;
+    gap:8px;
+    padding:14px 16px;
+    flex-wrap:wrap;
+    align-items:flex-end;
+    background:#FBFAF7;
+  }
+  .add-form .field{flex:1;min-width:120px;}
+  .add-form input, .add-form select{width:100%;}
+  button{
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:13px;
+    border:none;
+    border-radius:6px;
+    padding:10px 16px;
+    cursor:pointer;
+    transition:transform .1s ease, opacity .15s ease;
+  }
+  button.primary{background:var(--amber);color:var(--navy);}
+  button.primary:hover{opacity:0.9;}
+  button.ghost{background:transparent;color:var(--navy);border:1.5px solid var(--line);}
+  button.ghost:hover{border-color:var(--navy);}
+  button:active{transform:scale(0.97);}
+  table{
+    width:100%;
+    min-width:620px;
+    border-collapse:collapse;
+  }
+  thead th{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--slate);
+    text-align:left;
+    padding:10px 16px;
+    border-bottom:1.5px solid var(--line);
+  }
+  tbody td{
+    padding:12px 16px;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:#FBFAF7;}
+  .rank{
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--slate);
+    font-size:12px;
+    width:28px;
+  }
+  .count{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:15px;
+  }
+  .barcode{
+    display:inline-block;
+    letter-spacing:2px;
+    color:var(--line);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10px;
+    margin-left:8px;
+  }
+  .del-btn{
+    background:none;border:none;color:var(--slate);
+    cursor:pointer;font-size:16px;padding:2px 6px;
+  }
+  .del-btn:hover{color:var(--red);}
+  .empty{
+    padding:36px 16px;
+    text-align:center;
+    color:var(--slate);
+    font-size:14px;
+  }
+  .footer-note{
+    font-size:12px;
+    color:var(--slate);
+    text-align:center;
+    margin-top:8px;
+  }
+  @media print{
+    header::after{display:none;}
+    .add-form, .toolbar button, .no-print{display:none !important;}
+    body{background:#fff;}
+    header{background:#fff;color:var(--navy);border-bottom:2px solid var(--navy);}
+    .eyebrow{color:var(--navy);}
+    .sub{color:var(--slate);}
+    section.panel{border:1px solid #999;}
+  }
+  @media (max-width:520px){
+    h1{font-size:21px;}
+    .add-form{flex-direction:column;align-items:stretch;}
+    thead th{padding:10px 8px;font-size:10px;}
+    tbody td{padding:12px 8px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow">Suivi opérations — tirage de commande</p>
+  <h1>Registre de tirage journalier</h1>
+  <p class="sub" id="dateLabel">Chargement…</p>
+  <p class="sub" id="modeLabel" style="font-family:'IBM Plex Mono',monospace;font-size:11px;"></p>
+</header>
+
+<main>
+  <div class="toolbar no-print">
+    <div>
+      <label for="datePick">Date du rapport</label>
+      <input type="date" id="datePick">
+    </div>
+    <div style="margin-left:auto;display:flex;gap:8px;">
+      <button class="ghost" onclick="window.print()">🖨 Imprimer</button>
+      <button class="primary" id="pdfBtn">⬇ Télécharger PDF</button>
+    </div>
+  </div>
+
+  <div class="cards" id="summaryCards"></div>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Gérer les employés</h2>
+      <span style="font-size:12px;color:var(--slate);" id="empCountLine"></span>
+    </div>
+    <div class="add-form no-print">
+      <div class="field">
+        <label>Nouvel employé</label>
+        <input type="text" id="newEmpNameMgr" placeholder="Ex: Yassine" onkeypress="if(event.key==='Enter'){event.preventDefault();document.getElementById('addEmpBtn').click();}">
+      </div>
+      <div>
+        <button class="primary" id="addEmpBtn">+ Ajouter employé</button>
+      </div>
+    </div>
+    <table id="empTable" style="display:none;">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nom</th>
+          <th class="no-print"></th>
+        </tr>
+      </thead>
+      <tbody id="empTbody"></tbody>
+    </table>
+    <div class="empty" id="empEmptyState">Aucun employé pour l'instant. Ajoutez-en un ci-dessus.</div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Ajouter une saisie</h2>
+    </div>
+    <div class="add-form no-print">
+      <div class="field">
+        <label>Employé</label>
+        <select id="empSelect">
+          <option value="">— Choisir —</option>
+        </select>
+      </div>
+      <div class="field" id="newEmpField" style="display:none;">
+        <label>Nom du nouvel employé</label>
+        <input type="text" id="newEmpName" placeholder="Ex: Yassine">
+      </div>
+      <div class="field" style="max-width:110px;">
+        <label>🟢 Petites</label>
+        <input type="number" id="countPetite" min="0" placeholder="0">
+      </div>
+      <div class="field" style="max-width:110px;">
+        <label>🟡 Moyennes</label>
+        <input type="number" id="countMoyenne" min="0" placeholder="0">
+      </div>
+      <div class="field" style="max-width:110px;">
+        <label>🔴 Grandes</label>
+        <input type="number" id="countGrande" min="0" placeholder="0">
+      </div>
+      <div class="field" style="max-width:120px;">
+        <label>🔵 Payées</label>
+        <input type="number" id="countPayee" min="0" placeholder="0">
+      </div>
+      <div>
+        <button class="primary" id="addBtn">+ Ajouter</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2 id="tableTitle">Rapport du jour</h2>
+      <span style="font-size:12px;color:var(--slate);" id="totalLine"></span>
+    </div>
+    <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Employé</th>
+          <th>🟢 Petites</th>
+          <th>🟡 Moyennes</th>
+          <th>🔴 Grandes</th>
+          <th>🔵 Payées</th>
+          <th>Total</th>
+          <th class="no-print"></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    </div>
+    <div class="empty" id="emptyState" style="display:none;">Aucune saisie pour cette date. Ajoutez la première commande tirée ci-dessus.</div>
+  </section>
+
+  <p class="footer-note no-print">Les données sont partagées — visibles par toute personne ayant accès à ce lien.</p>
+</main>
+
+<script>
+const hasCloudStorage = (typeof window.storage !== 'undefined' && window.storage !== null);
+
+async function storageGet(key){
+  if(hasCloudStorage){
+    try{ return await window.storage.get(key, true); }
+    catch(e){ return null; }
+  } else {
+    try{
+      const v = localStorage.getItem(key);
+      return v !== null ? {value:v} : null;
+    }catch(e){ return null; }
+  }
+}
+
+async function storageSet(key, value){
+  if(hasCloudStorage){
+    return await window.storage.set(key, value, true);
+  } else {
+    try{
+      localStorage.setItem(key, value);
+      return {value};
+    }catch(e){ return null; }
+  }
+}
+
+let employees = [];
+let currentDate = new Date().toISOString().slice(0,10);
+
+function fmtDateLabel(d){
+  const dt = new Date(d+'T00:00:00');
+  return dt.toLocaleDateString('fr-FR', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+}
+
+async function loadEmployees(){
+  try{
+    const res = await storageGet('employees');
+    employees = res ? JSON.parse(res.value) : [];
+  }catch(e){ employees = []; }
+  renderEmpSelect();
+  renderEmpTable();
+}
+
+async function saveEmployees(){
+  await storageSet('employees', JSON.stringify(employees));
+}
+
+function renderEmpTable(){
+  const tbody = document.getElementById('empTbody');
+  const table = document.getElementById('empTable');
+  const empty = document.getElementById('empEmptyState');
+  document.getElementById('empCountLine').textContent = employees.length ? `${employees.length} employé${employees.length>1?'s':''}` : '';
+  tbody.innerHTML = '';
+  if(employees.length === 0){
+    table.style.display = 'none';
+    empty.style.display = 'block';
+    return;
+  }
+  table.style.display = '';
+  empty.style.display = 'none';
+  employees.forEach((name, i)=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="rank">${i+1}</td>
+      <td>${name}</td>
+      <td class="no-print"><button class="del-btn" onclick="deleteEmployee(${i})">✕</button></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+window.deleteEmployee = async function(idx){
+  const name = employees[idx];
+  if(!confirm(`Supprimer ${name} de la liste des employés ? (les rapports déjà enregistrés ne seront pas touchés)`)) return;
+  employees.splice(idx,1);
+  await saveEmployees();
+  renderEmpSelect();
+  renderEmpTable();
+}
+
+document.getElementById('addEmpBtn').addEventListener('click', async ()=>{
+  const input = document.getElementById('newEmpNameMgr');
+  const btn = document.getElementById('addEmpBtn');
+  const name = input.value.trim();
+  if(!name){ alert('Entrez un nom.'); return; }
+  if(employees.some(e => e.toLowerCase() === name.toLowerCase())){ alert('Cet employé existe déjà.'); return; }
+
+  const originalText = btn.textContent;
+  btn.textContent = '⏳ Ajout...';
+  btn.disabled = true;
+
+  employees.push(name);
+  renderEmpSelect();
+  renderEmpTable();
+  input.value = '';
+
+  try{
+    const result = await storageSet('employees', JSON.stringify(employees));
+    if(!result){
+      throw new Error('Storage returned null');
+    }
+  } catch(e){
+    console.error('Erreur sauvegarde employé:', e);
+    alert('⚠️ ' + name + ' a été ajouté à l\'écran mais N\'A PAS pu être sauvegardé (problème de connexion). Rechargez la page pour vérifier, et réessayez si besoin.');
+  } finally {
+    btn.textContent = originalText;
+    btn.disabled = false;
+  }
+});
+
+function renderEmpSelect(){
+  const sel = document.getElementById('empSelect');
+  sel.innerHTML = '<option value="">— Choisir —</option>';
+  employees.forEach(name=>{
+    const o = document.createElement('option');
+    o.value = name; o.textContent = name;
+    sel.appendChild(o);
+  });
+  const addOpt = document.createElement('option');
+  addOpt.value = '__new__';
+  addOpt.textContent = '+ Nouvel employé';
+  sel.appendChild(addOpt);
+}
+
+document.getElementById('empSelect').addEventListener('change', (e)=>{
+  document.getElementById('newEmpField').style.display = e.target.value === '__new__' ? 'block' : 'none';
+});
+
+async function loadRecords(date){
+  try{
+    const res = await storageGet('records:'+date);
+    return res ? JSON.parse(res.value) : [];
+  }catch(e){ return []; }
+}
+
+async function saveRecords(date, records){
+  await storageSet('records:'+date, JSON.stringify(records));
+}
+
+async function renderReport(){
+  document.getElementById('dateLabel').textContent = fmtDateLabel(currentDate);
+  document.getElementById('tableTitle').textContent = 'Rapport du ' + fmtDateLabel(currentDate);
+  const records = await loadRecords(currentDate);
+  const tbody = document.getElementById('tbody');
+  const empty = document.getElementById('emptyState');
+  tbody.innerHTML = '';
+
+  const withTotals = records.map(r => ({...r, total: (r.petite||0)+(r.moyenne||0)+(r.grande||0)+(r.payee||0)}));
+
+  if(records.length === 0){
+    empty.style.display = 'block';
+    document.getElementById('totalLine').textContent = '';
+  } else {
+    empty.style.display = 'none';
+    const sorted = [...withTotals].sort((a,b)=>b.total - a.total);
+    let totalOrders = 0, totalPayees = 0;
+    sorted.forEach((r)=>{
+      totalOrders += r.total;
+      totalPayees += (r.payee||0);
+      const originalIdx = records.indexOf(records.find(x=>x.name===r.name));
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td class="rank">${sorted.indexOf(r)+1}</td>
+        <td>${r.name}</td>
+        <td class="count">${r.petite||0}</td>
+        <td class="count">${r.moyenne||0}</td>
+        <td class="count">${r.grande||0}</td>
+        <td class="count" style="color:#2563eb;">${r.payee||0}</td>
+        <td class="count">${r.total}</td>
+        <td class="no-print"><button class="del-btn" onclick="deleteRecord(${originalIdx})">✕</button></td>
+      `;
+      tbody.appendChild(tr);
+    });
+    document.getElementById('totalLine').textContent = `Total : ${totalOrders} commande${totalOrders>1?'s':''} — ${totalPayees} payée${totalPayees>1?'s':''}`;
+  }
+
+  const cardsEl = document.getElementById('summaryCards');
+  const totalOrders = withTotals.reduce((s,r)=>s+r.total,0);
+  const totalPayees = withTotals.reduce((s,r)=>s+(r.payee||0),0);
+  const top = withTotals.length ? [...withTotals].sort((a,b)=>b.total-a.total)[0] : null;
+  cardsEl.innerHTML = `
+    <div class="card">
+      <div class="num">${totalOrders}</div>
+      <div class="lbl">Commandes tirées</div>
+    </div>
+    <div class="card">
+      <div class="num">${totalPayees}</div>
+      <div class="lbl">Commandes payées</div>
+    </div>
+    <div class="card">
+      <div class="num">${records.length}</div>
+      <div class="lbl">Employés actifs</div>
+    </div>
+    <div class="card top">
+      <div class="num">${top ? top.total : '—'}</div>
+      <div class="lbl">${top ? 'Meilleur : '+top.name : 'Meilleur performeur'}</div>
+    </div>
+  `;
+}
+
+window.deleteRecord = async function(idx){
+  const records = await loadRecords(currentDate);
+  records.splice(idx,1);
+  await saveRecords(currentDate, records);
+  renderReport();
+}
+
+document.getElementById('datePick').value = currentDate;
+document.getElementById('datePick').addEventListener('change', (e)=>{
+  currentDate = e.target.value;
+  renderReport();
+});
+
+document.getElementById('addBtn').addEventListener('click', async ()=>{
+  const sel = document.getElementById('empSelect');
+  let name = sel.value;
+  const petite = parseInt(document.getElementById('countPetite').value, 10) || 0;
+  const moyenne = parseInt(document.getElementById('countMoyenne').value, 10) || 0;
+  const grande = parseInt(document.getElementById('countGrande').value, 10) || 0;
+  const payee = parseInt(document.getElementById('countPayee').value, 10) || 0;
+
+  if(!name){ alert('Choisissez ou ajoutez un employé.'); return; }
+  if(name === '__new__'){
+    name = document.getElementById('newEmpName').value.trim();
+    if(!name){ alert('Entrez le nom du nouvel employé.'); return; }
+    if(!employees.includes(name)){
+      employees.push(name);
+      await saveEmployees();
+      renderEmpSelect();
+      renderEmpTable();
+    }
+  }
+  if(petite===0 && moyenne===0 && grande===0 && payee===0){ alert('Entrez au moins une valeur (petite, moyenne, grande ou payée).'); return; }
+
+  const records = await loadRecords(currentDate);
+  const existing = records.find(r=>r.name===name);
+  if(existing){
+    existing.petite = (existing.petite||0) + petite;
+    existing.moyenne = (existing.moyenne||0) + moyenne;
+    existing.grande = (existing.grande||0) + grande;
+    existing.payee = (existing.payee||0) + payee;
+  } else {
+    records.push({name, petite, moyenne, grande, payee});
+  }
+  await saveRecords(currentDate, records);
+
+  document.getElementById('countPetite').value = '';
+  document.getElementById('countMoyenne').value = '';
+  document.getElementById('countGrande').value = '';
+  document.getElementById('countPayee').value = '';
+  document.getElementById('newEmpName').value = '';
+  document.getElementById('newEmpField').style.display = 'none';
+  sel.value = '';
+  renderReport();
+});
+
+
+document.getElementById('pdfBtn').addEventListener('click', async ()=>{
+  const btn = document.getElementById('pdfBtn');
+  const originalText = btn.textContent;
+  btn.textContent = '⏳ Génération...';
+  btn.disabled = true;
+  try{
+    const records = await loadRecords(currentDate);
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // En-tête
+    doc.setFillColor(24, 42, 61);
+    doc.rect(0, 0, 210, 30, 'F');
+    doc.setTextColor(227, 162, 60);
+    doc.setFontSize(9);
+    doc.text('SUIVI OPERATIONS — TIRAGE DE COMMANDE', 14, 12);
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(16);
+    doc.text('Registre de tirage journalier', 14, 21);
+
+    doc.setTextColor(60, 60, 60);
+    doc.setFontSize(11);
+    doc.text(fmtDateLabel(currentDate), 14, 38);
+
+    const withTotals = records.map(r => ({...r, total: (r.petite||0)+(r.moyenne||0)+(r.grande||0)+(r.payee||0)}));
+    const totalOrders = withTotals.reduce((s,r)=>s+r.total,0);
+    const totalPayees = withTotals.reduce((s,r)=>s+(r.payee||0),0);
+    const sorted = [...withTotals].sort((a,b)=>b.total-a.total);
+
+    doc.setFontSize(10);
+    doc.text(`Total commandes tirees : ${totalOrders}`, 14, 45);
+    doc.text(`Total commandes payees : ${totalPayees}`, 14, 51);
+    doc.text(`Employes actifs : ${records.length}`, 14, 57);
+    if(sorted.length){
+      doc.text(`Meilleur performeur : ${sorted[0].name} (${sorted[0].total})`, 14, 63);
+    }
+
+    const rows = sorted.map((r, i)=>[
+      String(i+1), r.name, String(r.petite||0), String(r.moyenne||0), String(r.grande||0),
+      String(r.payee||0), String(r.total)
+    ]);
+
+    doc.autoTable({
+      startY: 70,
+      head: [['#', 'Employe', 'Petites', 'Moyennes', 'Grandes', 'Payees', 'Total']],
+      body: rows.length ? rows : [['—', 'Aucune saisie pour cette date', '—','—','—','—','—']],
+      headStyles: { fillColor: [24,42,61], textColor: [255,255,255], fontStyle: 'bold' },
+      alternateRowStyles: { fillColor: [246,243,236] },
+      styles: { fontSize: 9, cellPadding: 3.5 },
+      columnStyles: { 0: { cellWidth: 10 }, 6: { halign: 'right' } }
+    });
+
+    doc.setFontSize(8);
+    doc.setTextColor(150,150,150);
+    doc.text('Genere le ' + new Date().toLocaleString('fr-FR'), 14, 290);
+
+    doc.save(`rapport-tirage-${currentDate}.pdf`);
+  } catch(e){
+    alert('Erreur lors de la generation du PDF. Reessayez.');
+    console.error(e);
+  } finally {
+    btn.textContent = originalText;
+    btn.disabled = false;
+  }
+});
+
+(async function init(){
+  document.getElementById('modeLabel').textContent = hasCloudStorage
+    ? '☁ Mode partagé — visible par toute l\'équipe'
+    : '💾 Mode local — données sauvegardées sur cet appareil/navigateur seulement';
+  await loadEmployees();
+
+  const defaultNames = ['Manal', 'Asia', 'Bouchra', 'Zahira', 'Doua', 'Lamia'];
+  const missing = defaultNames.filter(n => !employees.some(e => e.toLowerCase() === n.toLowerCase()));
+  if(missing.length){
+    employees = employees.concat(missing);
+    await saveEmployees();
+    renderEmpSelect();
+    renderEmpTable();
+  }
+
+  await renderReport();
+})();
+</script>
+
+<script>
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=>{
+    navigator.serviceWorker.register('sw.js').catch(()=>{});
+  });
+}
+</script>
+</body>
+</html>
